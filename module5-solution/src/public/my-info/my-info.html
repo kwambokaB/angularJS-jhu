@@ -1,0 +1,24 @@
+
+
+<div class="container">
+  <h3 class="text-center" style="color:green">Registered User Information</h3>
+  <div ng-show="myInfoCtrl.notregistered">Not Signed Up Yet. <a ui-sref="public.sign-up"> Sign up Now!</a></div>
+
+  <div ng-hide="myInfoCtrl.notregistered">
+    <h3 style="color:green">User Data</h3>
+    <div>Firstname:  {{myInfoCtrl.user_data.firstname}}</div>
+    <div>LastName: {{myInfoCtrl.user_data.lastname}}</div>
+    <div>Email: {{myInfoCtrl.user_data.email}}</div>
+    <div>Phone: {{myInfoCtrl.user_data.phone}}</div>
+    <br>
+
+    <h3 style="color:green">Favorite Dish</h3>
+    <div>{{myInfoCtrl.menu_data.short_name}} --> {{myInfoCtrl.menu_data.name}}
+      <em><p>{{myInfoCtrl.menu_data.description}}</p></em>
+    </div>
+
+    <br>
+    <img ng-src="images/menu/{{myInfoCtrl.menu_data.category_short_name}}/{{myInfoCtrl.menu_data.category_short_name}}.jpg" />
+  </div>
+
+</div>
