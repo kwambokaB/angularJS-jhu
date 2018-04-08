@@ -1,0 +1,23 @@
+<div class="found-items-container">
+    <div class="empty-info-text" ng-hide='data && data.length'> Nothing found</div>
+
+    <div class="found-items" ng-show='data && data.length'>
+        <div class="found-item-container">
+            <div class="found-item bold" ng-repeat="heading in ['Name','Short Name','Description','']"> {{heading}}</div>
+        </div>
+
+        <div class="found-item-container" ng-repeat="item in data">
+            <div class="found-item">{{item.name}}</div>
+            <div class="found-item">{{item.short_name}}</div>
+            <div class="found-item">{{item.description}}</div>
+            <div class="found-item">
+                <button
+                        class="btn btn-primary"
+                        ng-click="onRemove({ index : $index});">
+                    Don't want this one!
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</div>
